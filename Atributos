@@ -1,0 +1,46 @@
+public class ContaBancaria {
+
+	//É uma prática recomendada, atribuir todos os atributos como private – código encapsulado
+	private int numConta;
+	private boolean ativa;
+	private double saldo;
+
+	public void sacar(double valor) {
+		if (valor < 0) {
+			return;
+		}
+			saldo -= valor;
+	}
+
+	public void depositar(double valor) {
+		if (valor < 0) {
+			return;
+		}
+			saldo += valor;
+	}
+
+	public int getNumConta() {
+		if (numConta > 0) {  //regra implementada dentro da conta bancária
+			return numConta;
+		}
+	}
+
+	public void setNumConta(int numConta) {
+		this.numConta = numConta;
+	}
+	
+	public boolean isAtiva() {
+		return ativa();
+	}
+	public void setAtiva(boolean ativa) {
+		this.ativa = ativa;
+	}
+
+	public double getSaldo() {
+		return saldo();
+	}
+	
+	/*public void getSaldo(double saldo) {
+		this.saldo = saldo;
+	} Este método foi inutilizado pois permite manipular o saldo externamente*/
+}
